@@ -1,6 +1,6 @@
 # Memotong situr website
 Website ini dibuat untuk memnuhi tugas slicing website HTML/CSS/JS
-#Teknologi yang digunakan 
+# Teknologi yang digunakan 
 - HTML
 - CSS
 - JavaScript
