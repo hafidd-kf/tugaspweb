@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngopag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <b>Ngopag<span>(Ngopi Pagi)</span></b>
+  <nav id="navMenu">
+    <a href="#menu">Menu</a>
+    <a href="#tentang">Tentang</a>
+  </nav>
+  <button id="burgerBtn">☰</button>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="label">Buka Sampai Kiamat</p>
+    <h1>Jangan lupa ngopi bolo,<br>pesan lewat HP anda.</h1>
+    <p>Silahkan pilih menu sesuai dengan keyakinan anda.</p>
+    <a href="#menu" class="btn">Mulai Pesan</a>
+  </div>
+  <div class="hero-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1rYZ8yvQqfc9UdnXTVMe8o8C32NXocGTHAQrihdtZvA&s=10" alt="Foto kopi">
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <h2>Menu</h2>
+
+  <div class="tabs" id="tabBar">
+    <button class="active" data-kategori="semua">Semua</button>
+    <button data-kategori="kopi">Kopi</button>
+    <button data-kategori="non-kopi">Non-Kopi</button>
+    <button data-kategori="cemilan">Cemilan</button>
+  </div>
+
+  <div id="menuList">
+    <div class ="menu-row" data-kategori="non-kopi" >
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5myKK9Cct1bHyp6usWkgadXLC1M09QRDbmfwTSrWqOg&s=10" alt="Air Mineral">
+      <div><b>Air Mineral</b><p>Banyu putih real.</p></div>
+      <div>Rp 5.000 <button class="plus" data-nama="Air Mineral" data-harga="5000">+</button></div>
+    </div>
+
+    <div class="menu-row" data-kategori="kopi">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv0CP7BrzveS5fe8P0Pta1nsSQKllYsLcB8V2ITdIZnA&s=10" alt="Kopi Hitam">
+      <div><b>Kopi Hitam</b><p>Espresso murni bagi yang patah hati.</p></div>
+      <div>Rp 10.000 <button class="plus" data-nama="Kopi Hitam" data-harga="10000">+</button></div>
+    </div>
+
+    <div class="menu-row" data-kategori="kopi">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPrj01rvaX67M2pqXjETPWS5pF_zrdfWSabY-I7jMx8Q&s=10" alt="Kopi Susu Gula Aren">
+      <div><b>Kopi Susu Gula Aren</b><p>Susu segar, gula aren asli.</p></div>
+      <div>Rp 18.000 <button class="plus" data-nama="Kopi Susu Gula Aren" data-harga="18000">+</button></div>
+    </div>
+
+    <div class="menu-row" data-kategori="non-kopi">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3CbTTV-71UcNDcAOXjFF9Pv_ollhzfxy3dxSAgMcbw&s=10" alt="Mactcha Latte">
+      <div><b>Matcha Latte</b><p>Matcha Probolinggo, susu segar.</p></div>
+      <div>Rp 19.000 <button class="plus" data-nama="Matcha Latte" data-harga="19000">+</button></div>
+    </div>
+
+    <div class="menu-row" data-kategori="cemilan">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMAaRxYtSGWuqBpGJ3td7CpfhrH_3pXkn16CY9LEHeA&s=10" alt="Croissant">
+      <div><b>Croissant</b><p>crenyes-crenyes wenakk poll.</p></div>
+      <div>Rp 14.000 <button class="plus" data-nama="Croissant" data-harga="14000">+</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="tentang" id="tentang">
+  <div><b>Biji Pilihan</b><p>Kopi lokal.</p></div>
+  <div><b>Diseduh Bikin Nikmat</b><p>Dibuat saat dipesan.</p></div>
+  <div><b>Gak Perlu Nunnggu Lama</b><p>Siap dalam 10 menit.</p></div>
+</section>
+
+<footer>&copy; <span id="tahun"></span> Ngopag (Ngopi Pagi).</footer>
+
+<div class="cart hidden" id="cartDrawer">
+  <button id="cartToggle">
+    <span id="cartCount">0 item</span>
+    <span id="cartTotal">Rp 0</span> ▲
+  </button>
+  <div id="cartPanel">
+    <div id="cartList"></div>
+    <button class="btn" id="pesanBtn">Pesan Sekarang</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

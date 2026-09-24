@@ -1,0 +1,257 @@
+:root {
+  --bg: #FDFCFA;
+  --white: #FFF;
+  --ink: #121111;
+  --soft: #6F6A60;
+  --accent: #BF5B3D;
+  --light: #F3DCD2;
+  --border: #ECE7DF;
+  --font: "Work Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+h1, h2, h3, p { margin-top: 0; }
+
+.hidden { display: none !important; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: rgb(10, 10, 10);
+  border: 0;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar b { font-size: 1.2rem; }
+.navbar b span { color: var(--accent); }
+
+nav { display: flex; gap: 28px; }
+nav a { color: var(--ink); text-decoration: none; }
+#burgerBtn { display: none; }
+
+.hero {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.label { color: var(--accent); font-weight: 600; }
+.hero h1 { font-size: clamp(2.2rem, 4vw, 3rem); }
+.hero p { color: var(--soft); }
+
+.hero-img {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--accent);
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.tabs button {
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgb(127, 117, 117);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tabs button.active {
+  background: var(--ink);
+  color: white;
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-row p {
+  margin: 2px 0 0;
+  font-size: .85rem;
+  color: var(--soft);
+}
+
+.pic {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.menu-row img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.plus {
+  border: 0;
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.tentang {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.tentang p, footer { color: var(--soft); }
+footer { text-align: center; padding: 24px; }
+
+.cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: auto;
+  background: var(--ink);
+  color: white;
+  border-radius: 16px 16px 0 0;
+  z-index: 30;
+}
+
+#cartToggle {
+  width: 100%;
+  padding: 16px 20px;
+  border: 0;
+  background: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+#cartPanel { display: none; }
+.cart.open #cartPanel { display: block; }
+#cartList { padding: 0 20px; max-height: 220px; overflow-y: auto; }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #ffffff20;
+}
+
+.cart-item h4 { margin: 0; }
+.cart-item button { cursor: pointer; }
+
+.cart .btn {
+  width: calc(100% - 40px);
+  margin: 14px 20px 20px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+
+  .hero-img {
+    order: -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 16px;
+  }
+
+  nav.show { display: flex; }
+  nav a { padding: 12px 0; }
+  #burgerBtn { display: block; }
+
+  .tentang { grid-template-columns: 1fr; }
+
+  .menu-row {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .pic {
+    width: 48px;
+    height: 48px;
+  }
+
+  .menu-row > div:last-child {
+    font-size: .78rem;
+  }
+}
+
+.menu-row.hidden { display: none !important; }
